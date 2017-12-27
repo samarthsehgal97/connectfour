@@ -76,7 +76,7 @@ function diaCheck(){
         console.log('Diagonal');
         reportWin(row,col);
         return true;
-      }else if (colorMatchCheck(retColor(row,col), retColor(row-1,col+1) ,retColor(row-2,col+2), retColor(row-3,col+3))) {
+      }else if (row>2 && colorMatchCheck(retColor(row,col), retColor(row-1,col+1) ,retColor(row-2,col+2), retColor(row-3,col+3))) {
         console.log('Diagonal');
         reportWin(row,col);
         return true;
