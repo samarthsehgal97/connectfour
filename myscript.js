@@ -93,17 +93,12 @@ function diaCheck(){
 }
 
 function gameEnd(winningPlayer) {
-  for (var col = 0; col < 7; col++) {
-    for (var row = 0; row < 7; row++) {
-
       $('h3').fadeOut('fast');
       $('h2').fadeOut('fast');
       $('h1').text(winningPlayer+" has won! Refresh your browser to play again!").css("fontSize", "50px")
-    }
-  }
+      $('.here').show();
 //  event.stopPropogation();
-$('.here').show();
-game_on=false;
+      game_on=false;
 }
 
 var currentPlayer = 1;
