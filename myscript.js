@@ -53,9 +53,6 @@ function horCheck(){
         reportWin(row,col);
         return true;
       }
-        else {
-          continue;
-        }
     }
   }
 }
@@ -67,9 +64,7 @@ function verCheck(){
         console.log('Vertical');
         reportWin(row,col);
         return true;
-      }        else {
-                continue;
-              }
+      }
     }
   }
 }
@@ -85,9 +80,7 @@ function diaCheck(){
         console.log('Diagonal');
         reportWin(row,col);
         return true;
-      }        else {
-                continue;
-              }
+      }
     }
   }
 }
@@ -97,7 +90,6 @@ function gameEnd(winningPlayer) {
       $('h2').fadeOut('fast');
       $('h1').text(winningPlayer+" has won! Refresh your browser to play again!").css("fontSize", "50px")
       $('.here').show();
-//  event.stopPropogation();
       game_on=false;
 }
 
@@ -110,7 +102,6 @@ $('h3').text(p1+": it is your turn, please pick a column to drop your blue chip.
 $('#table button').on('click',function() {
   if(game_on){
   var col = $(this).closest("td").index();
-
   var bottomAvail = checkBottom(col);
   if(bottomAvail>6 || bottomAvail === undefined)
     currentPlayer= currentPlayer*-1;
